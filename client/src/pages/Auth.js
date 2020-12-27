@@ -5,15 +5,34 @@ export const Auth = () => {
 				<h1>Сократи ссылку</h1>
 				<div class="card">
 					<div class="card-image">
-						<img src="https://www.mirf.ru/wp-content/uploads/2020/01/Deca-Dense.jpg"/>
-						<span class="card-title amber-text text-darken-4"><strong>Авторизация</strong></span>
+						<img src="https://www.mirf.ru/wp-content/uploads/2020/01/Deca-Dense.jpg" alt="Anime"/>
+						<span class="card-title amber-text text-darken-4" style={{fontWeight: 'bold'}}>Авторизация</span>
 					</div>
 					<div class="card-content">
-						<p>I am a very simple card. I am good at containing small bits of information.
-						I am convenient because I require little markup to use effectively.</p>
+					<div class="input-field">
+						<input 
+							placeholder="Введите Email" 
+							id="email" 
+							type="text"
+							name="email"
+							className="amber-input"
+						/>
+						<label htmlFor="email">Email</label>
+					</div>
+					<div class="input-field">
+						<input 
+							placeholder="Введите пароль" 
+							id="password" 
+							type="text"
+							name="password"
+							className="amber-input"
+						/>
+						<label htmlFor="password">Пароль</label>
+					</div>
 					</div>
 					<div class="card-action">
-						<a href="#">This is a link</a>
+						<button className="btn amber darken-2" style={{marginRight: 10}}>Войти</button>
+						<button className="btn amber darken-4">Зарегистрироваться</button>
 					</div>
 				</div>
 			</div>

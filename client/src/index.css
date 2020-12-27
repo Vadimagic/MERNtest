@@ -1,1 +1,19 @@
-@import "~materialize-css/dist/css/materialize.min.css"
+@import "~materialize-css/dist/css/materialize.min.css";
+
+input.amber-input {
+	border-bottom: 1px solid #fff!important;
+	box-shadow: 0 1px 0 0 #fff!important;
+}
+
+input.amber-input + label {
+	color: #fff!important;
+}
+
+input.amber-input:focus {
+	border-bottom: 1px solid #ff6f00!important;
+	box-shadow: 0 1px 0 0 #ff6f00!important;
+}
+
+input.amber-input + label {
+	color: #ff6f00!important;
+}
