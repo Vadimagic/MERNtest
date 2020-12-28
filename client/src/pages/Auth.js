@@ -13,7 +13,7 @@ export const Auth = () => {
 	return (
 		<div className="row">
 			<div className="col s6 offset-s3">
-				<h1>Сократи ссылку</h1>
+				<h1>Ты кто такой?</h1>
 				<div class="card">
 					<div class="card-image">
 						<img src="https://www.mirf.ru/wp-content/uploads/2020/01/Deca-Dense.jpg" alt="Anime"/>
