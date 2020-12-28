@@ -1,6 +1,9 @@
 import { useState } from "react"
+import { useHttp } from "../hooks/http.hook"
 
 export const Auth = () => {
+	const {loading, request} = useHttp()
+
 	const [form, setForm] = useState({
 		email: '',
 		password: ''
@@ -10,17 +13,24 @@ export const Auth = () => {
 		setForm({ ...form, [event.target.name]: event.target.value})
 	}
 
+	const registerHandler = async () => {
+		try {
+			const data = await request('/api/auth/register', 'POST', {...form})
+			console.log(data)
+		} catch (e) {}
+	}
+
 	return (
 		<div className="row">
 			<div className="col s6 offset-s3">
 				<h1>Ты кто такой?</h1>
-				<div class="card">
-					<div class="card-image">
+				<div className="card">
+					<div className="card-image">
 						<img src="https://www.mirf.ru/wp-content/uploads/2020/01/Deca-Dense.jpg" alt="Anime"/>
-						<span class="card-title amber-text text-darken-4" style={{fontWeight: 'bold'}}>Авторизация</span>
+						<span className="card-title amber-text text-darken-4" style={{fontWeight: 'bold'}}>Авторизация</span>
 					</div>
-					<div class="card-content">
-						<div class="input-field">
+					<div className="card-content">
+						<div className="input-field">
 							<input 
 								placeholder="Введите Email" 
 								id="email" 
@@ -31,11 +41,11 @@ export const Auth = () => {
 							/>
 							<label htmlFor="email">Email</label>
 						</div>
-						<div class="input-field">
+						<div className="input-field">
 							<input 
 								placeholder="Введите пароль" 
 								id="password" 
-								type="text"
+								type="password"
 								name="password"
 								className="amber-input"
 								onChange={changeHandler}
@@ -43,9 +53,17 @@ export const Auth = () => {
 							<label htmlFor="password">Пароль</label>
 						</div>
 					</div>
-					<div class="card-action">
-						<button className="btn amber darken-2" style={{marginRight: 10}}>Войти</button>
-						<button className="btn amber darken-4">Зарегистрироваться</button>
+					<div className="card-action">
+						<button 
+							className="btn amber darken-2" 
+							style={{marginRight: 10}}
+							disabled={loading}
+						>Войти</button>
+						<button 
+							className="btn amber darken-4"
+							onClick={registerHandler}
+							disabled={loading}
+						>Регистрация</button>
 					</div>
 				</div>
 			</div>
