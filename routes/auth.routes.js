@@ -20,7 +20,6 @@ router.post('/register', [
 				message: 'Incorrect data at registration'
 			})
 		}
-		console.log("Body: ", req.body)
 		const {email, password} = req.body
 		const candidate = await User.findOne({email})
 		if (candidate) {
