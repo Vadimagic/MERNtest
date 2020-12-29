@@ -20,7 +20,8 @@ router.post('/register', [
 				message: 'Некорректные данные при регистрации'
 			})
 		}
-		const {email, password} = req.body
+		let {email, password} = req.body
+		email = email.toLowerCase()
 		const candidate = await User.findOne({email})
 		if (candidate) {
 			return res.status(400).json({message: 'Такой пользователь уже существует'})
