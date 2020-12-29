@@ -22,7 +22,7 @@ export const Auth = () => {
 
 	const registerHandler = async () => {
 		try {
-			const data = await request('/api/auth/register', 'POST', {...form})
+			const data = await request('/api/auth/register', 'POST', {...form, email: form.email.toLowerCase()})
 			console.log(data)
 		} catch (e) {}
 	}
