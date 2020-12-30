@@ -36,19 +36,20 @@ router.post('/register', [
 })
 // /login
 router.post('/login', [
-		check('email', 'Введите корректный email').normalizeEmail().isEmail(),
+		check('email', 'Введите корректный email').isEmail(),
 		check('password', 'Введите корректный пароль').exists()
 	],async (req, res) => {
 	try {
 		const errors = validationResult(req)
-		if (errors.isEmpty()) {
+		if (!errors.isEmpty()) {
 			return res.status(400).json({
 				errors: errors.array(),
 				message: 'Некорректные данные при авторизации'
 			})
 		}
 
-		const {email, password} = req.body
+		let {email, password} = req.body
+		email = email.toLowerCase()
 		const user = await User.findOne({email})
 		if (!user) {
 			return res.status(400).json({message: "Пользователь не найден"})

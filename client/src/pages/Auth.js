@@ -23,7 +23,14 @@ export const Auth = () => {
 	const registerHandler = async () => {
 		try {
 			const data = await request('/api/auth/register', 'POST', {...form})
-			console.log(data)
+			message(data.message)
+		} catch (e) {}
+	}
+
+	const loginHandler = async () => {
+		try {
+			const data = await request('/api/auth/login', 'POST', {...form})
+			message(data.message)
 		} catch (e) {}
 	}
 
@@ -64,6 +71,7 @@ export const Auth = () => {
 						<button 
 							className="btn amber darken-2" 
 							style={{marginRight: 10}}
+							onClick={loginHandler}
 							disabled={loading}
 						>Войти</button>
 						<button 
