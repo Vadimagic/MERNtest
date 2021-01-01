@@ -57,6 +57,7 @@ export const Auth = () => {
 								type="text"
 								name="email"
 								className="amber-input"
+								value={form.email}
 								onChange={changeHandler}
 							/>
 							<label htmlFor="email">Email</label>
@@ -68,6 +69,7 @@ export const Auth = () => {
 								type="password"
 								name="password"
 								className="amber-input"
+								value={form.password}
 								onChange={changeHandler}
 							/>
 							<label htmlFor="password">Пароль</label>

@@ -24,7 +24,7 @@ router.post('/generate', auth, async (req, res) => {
 		const link = new Link({code, to, from, owner: req.user.userId})
 
 		await link.save()
-
+			
 		res.status(201).json({link})
 	} catch (e) {
 		res.status(500).json({message: 'Ошибка, пожалуйста повторите!'})	
