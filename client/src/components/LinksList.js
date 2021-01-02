@@ -5,7 +5,7 @@ export const LinksList = ({links}) => {
 		return <p className="center">Ссылок нет</p>
 	}
 	return (
-		<table>
+		<table className="responsive-table">
 			<thead>
 				<tr>
 					<th>№</th>

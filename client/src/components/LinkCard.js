@@ -5,7 +5,7 @@ export const LinkCard = ({link}) => {
 				<div className="card">
 					<div className="card-image">
 						<img src={`https://picsum.photos/600/300`} alt=""/>
-						<span className="card-title">Сокращенная ссылка Title</span>
+						<span className="card-title">Сокращенная ссылка</span>
 					</div>
 					<div className="card-content" style={{overflow: 'hidden'}}>
 						<p>Ваша ссылка: <a href={link.to} target="_blank" rel="noreferrer">{link.to}</a></p>
