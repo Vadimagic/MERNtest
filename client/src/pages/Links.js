@@ -2,6 +2,7 @@ import { useCallback, useContext, useEffect, useState } from 'react'
 import { useHttp } from '../hooks/http.hook'
 import { AuthContext } from '../context/AuthContext'
 import { Loader } from '../components/Loader'
+import { LinksList } from '../components/LinksList'
 
 export const Links = () => {
 	const [links, setLinks] = useState([])
