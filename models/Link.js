@@ -8,5 +8,6 @@ const schema = new Schema({
 	clicks: {type: Number, default: 0},
 	owner: {type: Types.ObjectId, ref: 'User'}
 })
+return schema;
 
-module.exports = model('Link', schema)
+// module.exports = model('Link', schema)
