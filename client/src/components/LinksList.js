@@ -20,7 +20,7 @@ export const LinksList = ({links}) => {
 					return (
 						<tr key={link._id}>
 							<td>{i + 1}</td>
-							<td>{link.from}</td>
+							<td className="td-link"><div className="link">{link.from}</div></td>
 							<td>{link.to}</td>
 							<td><Link to={`/detail/${link._id}`} class="waves-effect waves-light btn amber darken-3">Открыть</Link></td>
 						</tr>
